@@ -5,10 +5,20 @@ console.log("Nome: " + pokemon.name[0].toUpperCase() + pokemon.name.substr(1, po
 console.log("Habilidade: " + pokemon.ability[0].toUpperCase() + pokemon.ability.substr(1, pokemon.ability.length))
 }
 function atributosPokemon(){
-    return console.log("HP: " + pokemon.attributes.hp + "\nATK: " +  pokemon.attributes.attack + 
+    var hp = pokemon.attributes.hp
+    var atk = pokemon.attributes.attack
+    var spATK = pokemon.attributes.specialAttack
+    var def = pokemon.attributes.defense
+    var spDEF = pokemon.attributes.specialDefense
+    var speed = pokemon.attributes.speed
+
+    return console.log("HP: " + hp + "\nATK: " + atk + " SpATK: " + spATK+ 
+    "\nDEF: " + def + " SpDEF: " + spDEF + "\nSPEED: " + speed)
+
+   /*    return console.log("HP: " + pokemon.attributes.hp + "\nATK: " +  pokemon.attributes.attack + 
     "  SpATK: " +  pokemon.attributes.specialAttack + "\nDEF: " + pokemon.attributes.defense +
     "  SpDEF: " +  pokemon.attributes.specialDefense + "\nSPEED: " + pokemon.attributes.speed)
-
+*/
 }
 atributosPokemon()
 /*

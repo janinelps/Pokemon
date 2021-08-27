@@ -1,7 +1,10 @@
-const { ability } = require('./pokemon')
-const pikachu = require('./pokemon')
+const pokemon = require('./pokemon')
 
-console.log("Habilidade: "+ pikachu.ability[0].toUpperCase()+ability.substr(1,ability.length))
+function mostraDados() {
+console.log("Nome: " + pokemon.name[0].toUpperCase() + pokemon.name.substr(1, pokemon.name.length))
+console.log("Habilidade: " + pokemon.ability[0].toUpperCase() + pokemon.ability.substr(1, pokemon.ability.length))
+}
+
 
 /*
 Função 1: Manipula uma string para deixar palavras ou letras maiusculas

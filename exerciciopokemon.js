@@ -4,6 +4,19 @@ function mostraDados() {
     console.log("Nome: " + pokemon.name[0].toUpperCase() + pokemon.name.substr(1, pokemon.name.length))
     console.log("Habilidade: " + pokemon.ability[0].toUpperCase() + pokemon.ability.substr(1, pokemon.ability.length))
 }
+
+function linhaDeEvolucao(){
+    var linhaEvol1 = pokemon.preEvolution
+    var linhaEvol2 = pokemon.name
+    var linhaEvol3 = pokemon.evolution
+    if(linhaEvol1 != null && linhaEvol3 != null){
+        console.log(linhaEvol1[0].toUpperCase().substr(1, linhaEvol1.length)+ " >> "+ linhaEvol2.toUpperCase() + " >> " + linhaEvol3[0].toUpperCase().substr(1, linhaEvol3.length))
+    }
+    /*if(pokemon.preEvolution != null && pokemon.evolution != null){
+        pokemon.nameto.UpperCase()
+    } else if */
+}
+
 function atributosPokemon() {
     var hp = pokemon.attributes.hp
     var atk = pokemon.attributes.attack
@@ -28,8 +41,7 @@ imprimir()
 /*
 Função 1: Manipula uma string para deixar palavras ou letras maiusculas
 
-Função linhaDeEvolucao: Mostra a linha de evolução com o pokemon atual em
-letras maisculas
+
 
 Função atributosPokemon: Mostra os atributos
 

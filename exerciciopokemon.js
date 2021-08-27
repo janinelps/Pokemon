@@ -4,8 +4,13 @@ function mostraDados() {
 console.log("Nome: " + pokemon.name[0].toUpperCase() + pokemon.name.substr(1, pokemon.name.length))
 console.log("Habilidade: " + pokemon.ability[0].toUpperCase() + pokemon.ability.substr(1, pokemon.ability.length))
 }
+function atributosPokemon(){
+    return console.log("HP: " + pokemon.attributes.hp + "\nATK: " +  pokemon.attributes.attack + 
+    "  SpATK: " +  pokemon.attributes.specialAttack + "\nDEF: " + pokemon.attributes.defense +
+    "  SpDEF: " +  pokemon.attributes.specialDefense + "\nSPEED: " + pokemon.attributes.speed)
 
-
+}
+atributosPokemon()
 /*
 Função 1: Manipula uma string para deixar palavras ou letras maiusculas
 

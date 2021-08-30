@@ -1,4 +1,5 @@
-const pokemon = require('./pokemon')
+const pokemon = require('./pokemon');
+const { primeraMaiuscula } = require('./util');
 const util = require('./util')
 
 let dadosImpressao = '';
@@ -70,8 +71,15 @@ function atributosPokemon() {
 
 function ataquesPokemon() {
     const lvlAtaques = pokemon.moves.map(ar => ar.lv)
-    const ordemlvlAtaques = lvlAtaques.sort((numero1, numero2)=>(numero1-numero2))
-    return console.log(ordemlvlAtaques)
+    const ordemlvlAtaques = lvlAtaques.sort((numero1, numero2) => (numero1 - numero2))
+    new Set(ordemlvlAtaques)
+    dadosImpressao += "\n\nAtaques: \n"
+    for (const iterator of ordemlvlAtaques) {
+        const nomesAtaques = pokemon.moves.filter(a => a.lv == iterator)
+        nomesAtaques.forEach(ataque => {
+        dadosImpressao += "Lv ".concat(ataque.lv," - ", util.primeraMaiuscula(ataque.name)) 
+        dadosImpressao += "\n"});
+    }
 }
 
 function imprimir() {

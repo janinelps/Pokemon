@@ -6,14 +6,15 @@ let dadosImpressao = '';
 function mostraDados() {
     dadosImpressao += "Nome: ".concat(util.primeraMaiuscula(pokemon.name))
     dadosImpressao += " - Tipo: ".concat(pokemon.types.map(tipo => util.primeraMaiuscula(tipo).toString()))
-    dadosImpressao += "\n Habilidade: ".concat(util.primeraMaiuscula(pokemon.ability))
-    dadosImpressao += "\n Linha de evolução: \n"
+    dadosImpressao += "\nHabilidade: ".concat(util.primeraMaiuscula(pokemon.ability))
+    dadosImpressao += "\n\n"
+    dadosImpressao += "Linha de evolução: \n"
 
     if (!util.isNullOrEmpty(pokemon.preEvolution)) {
         dadosImpressao += util.primeraMaiuscula(pokemon.preEvolution);
         dadosImpressao += " >> ";
-
     }
+
     dadosImpressao += pokemon.name.toUpperCase();
 
     if (!util.isNullOrEmpty(pokemon.evolution)) {
@@ -38,7 +39,7 @@ function linhaDeEvolucao() {
     if (!util.isNullOrEmpty(pokemon.evolution)) {
         dadosImpressao += " >> ".concat(util.primeraMaiuscula(pokemon.evolution));
     }
-    dadosImpressao += '\n\n\r'
+    dadosImpressao += '\n\r'
 
 
     /*if (linhaEvol1 != null && linhaEvol3 != null) {
@@ -51,6 +52,7 @@ function linhaDeEvolucao() {
 }
 
 function atributosPokemon() {
+    dadosImpressao += 'Atributos: \n '
     var hp = pokemon.attributes.hp
     var atk = pokemon.attributes.attack
     var spATK = pokemon.attributes.specialAttack
@@ -58,19 +60,19 @@ function atributosPokemon() {
     var spDEF = pokemon.attributes.specialDefense
     var speed = pokemon.attributes.speed
 
-    return console.log("HP: " + hp + "\nATK: " + atk + " SpATK: " + spATK +
-            "\nDEF: " + def + " SpDEF: " + spDEF + "\nSPEED: " + speed)
+    dadosImpressao += "HP: " + hp + "\nATK: " + atk + " SpATK: " + spATK +
+        "\nDEF: " + def + " SpDEF: " + spDEF + "\nSPEED: " + speed
         /*    return console.log("HP: " + pokemon.attributes.hp + "\nATK: " +  pokemon.attributes.attack + 
- "  SpATK: " +  pokemon.attributes.specialAttack + "\nDEF: " + pokemon.attributes.defense +
- "  SpDEF: " +  pokemon.attributes.specialDefense + "\nSPEED: " + pokemon.attributes.speed)
-*/
+         "  SpATK: " +  pokemon.attributes.specialAttack + "\nDEF: " + pokemon.attributes.defense +
+         "  SpDEF: " +  pokemon.attributes.specialDefense + "\nSPEED: " + pokemon.attributes.speed)
+        */
 }
 
 function imprimir() {
-    return mostraDados(),
-        // linhaDeEvolucao(),
-        console.log(dadosImpressao),
-        atributosPokemon();
+    mostraDados();
+    // linhaDeEvolucao(),
+    atributosPokemon();
+    console.log(dadosImpressao);
 
 }
 imprimir()

@@ -62,17 +62,24 @@ function atributosPokemon() {
 
     dadosImpressao += "HP: " + hp + "\nATK: " + atk + " SpATK: " + spATK +
         "\nDEF: " + def + " SpDEF: " + spDEF + "\nSPEED: " + speed
-        /*    return console.log("HP: " + pokemon.attributes.hp + "\nATK: " +  pokemon.attributes.attack + 
-         "  SpATK: " +  pokemon.attributes.specialAttack + "\nDEF: " + pokemon.attributes.defense +
-         "  SpDEF: " +  pokemon.attributes.specialDefense + "\nSPEED: " + pokemon.attributes.speed)
-        */
+    /*    return console.log("HP: " + pokemon.attributes.hp + "\nATK: " +  pokemon.attributes.attack + 
+     "  SpATK: " +  pokemon.attributes.specialAttack + "\nDEF: " + pokemon.attributes.defense +
+     "  SpDEF: " +  pokemon.attributes.specialDefense + "\nSPEED: " + pokemon.attributes.speed)
+    */
+}
+
+function ataquesPokemon() {
+    const lvlAtaques = pokemon.moves.map(ar => ar.lv)
+    const ordemlvlAtaques = lvlAtaques.sort((numero1, numero2)=>(numero1-numero2))
+    return console.log(ordemlvlAtaques)
 }
 
 function imprimir() {
     mostraDados();
     // linhaDeEvolucao(),
-    atributosPokemon();
-    console.log(dadosImpressao);
+    atributosPokemon(),
+        ataquesPokemon(),
+        console.log(dadosImpressao);
 
 }
 imprimir()

@@ -20,3 +20,5 @@ Lv 5 - Tackle
 Lv 9 - Thunder Wave
 Lv 20 - Thunderbolt
 Lv 50 - Thunder
+
+

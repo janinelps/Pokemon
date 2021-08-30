@@ -1,20 +1,53 @@
 const pokemon = require('./pokemon')
+const util = require('./util')
+
+let dadosImpressao = '';
 
 function mostraDados() {
-    console.log("Nome: " + pokemon.name[0].toUpperCase() + pokemon.name.substr(1, pokemon.name.length))
-    console.log("Habilidade: " + pokemon.ability[0].toUpperCase() + pokemon.ability.substr(1, pokemon.ability.length))
+    dadosImpressao += "Nome: ".concat(util.primeraMaiuscula(pokemon.name))
+    dadosImpressao += " - Tipo: ".concat(pokemon.types.map(tipo => util.primeraMaiuscula(tipo).toString()))
+    dadosImpressao += "\n Habilidade: ".concat(util.primeraMaiuscula(pokemon.ability))
+    dadosImpressao += "\n Linha de evolução: \n"
+
+    if (!util.isNullOrEmpty(pokemon.preEvolution)) {
+        dadosImpressao += util.primeraMaiuscula(pokemon.preEvolution);
+        dadosImpressao += " >> ";
+
+    }
+    dadosImpressao += pokemon.name.toUpperCase();
+
+    if (!util.isNullOrEmpty(pokemon.evolution)) {
+        dadosImpressao += " >> ".concat(util.primeraMaiuscula(pokemon.evolution));
+    }
+    dadosImpressao += '\n\n\r'
+
 }
 
-function linhaDeEvolucao(){
-    var linhaEvol1 = pokemon.preEvolution
-    var linhaEvol2 = pokemon.name
-    var linhaEvol3 = pokemon.evolution
-    if(linhaEvol1 != null && linhaEvol3 != null){
-        console.log(linhaEvol1[0].toUpperCase().substr(1, linhaEvol1.length)+ " >> "+ linhaEvol2.toUpperCase() + " >> " + linhaEvol3[0].toUpperCase().substr(1, linhaEvol3.length))
+function linhaDeEvolucao() {
+    //var linhaEvol1 = pokemon.preEvolution
+    //var linhaEvol2 = pokemon.name
+    //var linhaEvol3 = pokemon.evolution
+
+    if (!util.isNullOrEmpty(pokemon.preEvolution)) {
+        dadosImpressao += util.primeraMaiuscula(pokemon.preEvolution);
+        dadosImpressao += " >> ";
+
     }
-    /*if(pokemon.preEvolution != null && pokemon.evolution != null){
-        pokemon.nameto.UpperCase()
-    } else if */
+    dadosImpressao += pokemon.name.toUpperCase();
+
+    if (!util.isNullOrEmpty(pokemon.evolution)) {
+        dadosImpressao += " >> ".concat(util.primeraMaiuscula(pokemon.evolution));
+    }
+    dadosImpressao += '\n\n\r'
+
+
+    /*if (linhaEvol1 != null && linhaEvol3 != null) {
+        dadosImpressao += linhaEvol1[0].toUpperCase().substr(1, linhaEvol1.length) + " >> " + linhaEvol2.toUpperCase() + " >> " + linhaEvol3[0].toUpperCase().substr(1, linhaEvol3.length)
+            //}
+
+        if(pokemon.preEvolution != null && pokemon.evolution != null){
+            pokemon.nameto.UpperCase()
+        } else if */
 }
 
 function atributosPokemon() {
@@ -26,22 +59,24 @@ function atributosPokemon() {
     var speed = pokemon.attributes.speed
 
     return console.log("HP: " + hp + "\nATK: " + atk + " SpATK: " + spATK +
-        "\nDEF: " + def + " SpDEF: " + spDEF + "\nSPEED: " + speed)
-    /*    return console.log("HP: " + pokemon.attributes.hp + "\nATK: " +  pokemon.attributes.attack + 
-     "  SpATK: " +  pokemon.attributes.specialAttack + "\nDEF: " + pokemon.attributes.defense +
-     "  SpDEF: " +  pokemon.attributes.specialDefense + "\nSPEED: " + pokemon.attributes.speed)
- */
+            "\nDEF: " + def + " SpDEF: " + spDEF + "\nSPEED: " + speed)
+        /*    return console.log("HP: " + pokemon.attributes.hp + "\nATK: " +  pokemon.attributes.attack + 
+ "  SpATK: " +  pokemon.attributes.specialAttack + "\nDEF: " + pokemon.attributes.defense +
+ "  SpDEF: " +  pokemon.attributes.specialDefense + "\nSPEED: " + pokemon.attributes.speed)
+*/
 }
+
 function imprimir() {
-    return mostraDados(), 
-    atributosPokemon()
+    return mostraDados(),
+        // linhaDeEvolucao(),
+        console.log(dadosImpressao),
+        atributosPokemon();
+
 }
 imprimir()
 
 /*
 Função 1: Manipula uma string para deixar palavras ou letras maiusculas
-
-
 
 Função atributosPokemon: Mostra os atributos
 

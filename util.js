@@ -1,3 +1,5 @@
+const pokemon = require("./pokemon");
+
 module.exports = {
     isNullOrEmpty: function(value) {
         if (!value) {

@@ -1,9 +1,10 @@
 const pokemon = require('./pokemon');
-const { primeraMaiuscula } = require('./util');
 const util = require('./util')
-
+//Importa os arquivos de pokemon.js para serem consumidos pelas function
+//Importa util.js onde encontram-se as function para checagem de conteúdo do array
+//e de padronização do array
 let dadosImpressao = '';
-
+//variável para ser preenchida quando necessário
 function mostraDados() {
     dadosImpressao += "Nome: ".concat(util.primeraMaiuscula(pokemon.name))
     dadosImpressao += " - Tipo: ".concat(pokemon.types.map(tipo => util.primeraMaiuscula(tipo).toString()))
@@ -11,7 +12,7 @@ function mostraDados() {
     dadosImpressao += "\n\n"
     dadosImpressao += "Linha de evolução: \n"
 
-    if (!util.isNullOrEmpty(pokemon.preEvolution)) {
+    /*if (!util.isNullOrEmpty(pokemon.preEvolution)) {
         dadosImpressao += util.primeraMaiuscula(pokemon.preEvolution);
         dadosImpressao += " >> ";
     }
@@ -22,8 +23,7 @@ function mostraDados() {
         dadosImpressao += " >> ".concat(util.primeraMaiuscula(pokemon.evolution));
     }
     dadosImpressao += '\n\n\r'
-
-}
+*/}
 
 function linhaDeEvolucao() {
     //var linhaEvol1 = pokemon.preEvolution
@@ -84,10 +84,9 @@ function ataquesPokemon() {
 
 function imprimir() {
     mostraDados();
-    // linhaDeEvolucao(),
     atributosPokemon(),
         ataquesPokemon(),
-        console.log(dadosImpressao);
+        console.log(dadosImpressao)
 
 }
 imprimir()

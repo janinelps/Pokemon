@@ -12,18 +12,7 @@ function mostraDados() {
     dadosImpressao += "\n\n"
     dadosImpressao += "Linha de evolução: \n"
 
-    /*if (!util.isNullOrEmpty(pokemon.preEvolution)) {
-        dadosImpressao += util.primeraMaiuscula(pokemon.preEvolution);
-        dadosImpressao += " >> ";
-    }
-
-    dadosImpressao += pokemon.name.toUpperCase();
-
-    if (!util.isNullOrEmpty(pokemon.evolution)) {
-        dadosImpressao += " >> ".concat(util.primeraMaiuscula(pokemon.evolution));
-    }
-    dadosImpressao += '\n\n\r'
-*/}
+}
 
 function linhaDeEvolucao() {
     //var linhaEvol1 = pokemon.preEvolution
@@ -53,7 +42,7 @@ function linhaDeEvolucao() {
 }
 
 function atributosPokemon() {
-    dadosImpressao += 'Atributos: \n'
+    dadosImpressao += '\nAtributos: \n'
     var hp = pokemon.attributes.hp
     var atk = pokemon.attributes.attack
     var spATK = pokemon.attributes.specialAttack
@@ -84,7 +73,8 @@ function ataquesPokemon() {
 
 function imprimir() {
     mostraDados();
-    atributosPokemon(),
+    linhaDeEvolucao(),
+    atributosPokemon(), 
         ataquesPokemon(),
         console.log(dadosImpressao)
 

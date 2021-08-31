@@ -6,9 +6,9 @@ const util = require('./util')
 let dadosImpressao = '';
 //variável para ser preenchida quando necessário
 function mostraDados() {
-    dadosImpressao += "Nome: ".concat(util.primeraMaiuscula(pokemon.name))
-    dadosImpressao += " - Tipo: ".concat(pokemon.types.map(tipo => util.primeraMaiuscula(tipo).toString()))
-    dadosImpressao += "\nHabilidade: ".concat(util.primeraMaiuscula(pokemon.ability))
+    dadosImpressao += "Nome: " + util.primeraMaiuscula(pokemon.name)
+    dadosImpressao += " - Tipo: " + pokemon.types.map(tipo => util.primeraMaiuscula(tipo).toString())
+    dadosImpressao += "\nHabilidade: " + util.primeraMaiuscula(pokemon.ability)
     dadosImpressao += "\n\n"
     dadosImpressao += "Linha de evolução: \n"
 
@@ -38,7 +38,7 @@ function linhaDeEvolucao() {
     dadosImpressao += pokemon.name.toUpperCase();
 
     if (!util.isNullOrEmpty(pokemon.evolution)) {
-        dadosImpressao += " >> ".concat(util.primeraMaiuscula(pokemon.evolution));
+        dadosImpressao += " >> " + util.primeraMaiuscula(pokemon.evolution);
     }
     dadosImpressao += '\n\r'
 
@@ -77,7 +77,7 @@ function ataquesPokemon() {
     for (const iterator of ordemlvlAtaques) {
         const nomesAtaques = pokemon.moves.filter(a => a.lv == iterator)
         nomesAtaques.forEach(ataque => {
-        dadosImpressao += "Lv ".concat(ataque.lv," - ", util.primeraMaiuscula(ataque.name)) 
+        dadosImpressao += "Lv ".concat(ataque.lv," - ", util.primeraMaiuscula(ataque.name))
         dadosImpressao += "\n"});
     }
 }

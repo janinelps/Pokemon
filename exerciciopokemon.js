@@ -53,7 +53,7 @@ function linhaDeEvolucao() {
 }
 
 function atributosPokemon() {
-    dadosImpressao += 'Atributos: \n '
+    dadosImpressao += 'Atributos: \n'
     var hp = pokemon.attributes.hp
     var atk = pokemon.attributes.attack
     var spATK = pokemon.attributes.specialAttack
@@ -61,8 +61,8 @@ function atributosPokemon() {
     var spDEF = pokemon.attributes.specialDefense
     var speed = pokemon.attributes.speed
 
-    dadosImpressao += "HP: " + hp + "\nATK: " + atk + " SpATK: " + spATK +
-        "\nDEF: " + def + " SpDEF: " + spDEF + "\nSPEED: " + speed
+    dadosImpressao += "\n    HP: " + hp + "\n    ATK: " + atk + " SpATK: " + spATK +
+        "\n    DEF: " + def + " SpDEF: " + spDEF + "\n    SPEED: " + speed
     /*    return console.log("HP: " + pokemon.attributes.hp + "\nATK: " +  pokemon.attributes.attack + 
      "  SpATK: " +  pokemon.attributes.specialAttack + "\nDEF: " + pokemon.attributes.defense +
      "  SpDEF: " +  pokemon.attributes.specialDefense + "\nSPEED: " + pokemon.attributes.speed)

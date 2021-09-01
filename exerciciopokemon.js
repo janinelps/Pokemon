@@ -48,8 +48,11 @@ function atributosPokemon() {
     var spDEF = pokemon.attributes.specialDefense
     var speed = pokemon.attributes.speed
 
-    dadosImpressao += "\n    HP: " + hp + "\n    ATK: " + atk + " SpATK: " + spATK +
-        "\n    DEF: " + def + " SpDEF: " + spDEF + "\n    SPEED: " + speed
+    dadosImpressao +=  `
+    HP: ${hp} 
+    ATK: ${atk}  SpATK: ${spATK} 
+    DEF: ${def}  SpDEF: ${spDEF} 
+    SPEED: ${speed}`
     /*    return console.log("HP: " + pokemon.attributes.hp + "\nATK: " +  pokemon.attributes.attack + 
      "  SpATK: " +  pokemon.attributes.specialAttack + "\nDEF: " + pokemon.attributes.defense +
      "  SpDEF: " +  pokemon.attributes.specialDefense + "\nSPEED: " + pokemon.attributes.speed)

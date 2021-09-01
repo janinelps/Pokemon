@@ -5,6 +5,7 @@ const util = require('./util')
 //e de padronização do array
 let dadosImpressao = '';
 //variável para ser preenchida quando necessário
+
 function mostraDados() {
     dadosImpressao += "Nome: " + util.primeraMaiuscula(pokemon.name)
     dadosImpressao += " - Tipo: " + pokemon.types.map(tipo => util.primeraMaiuscula(tipo)).join(' / ')
@@ -41,10 +42,13 @@ Atributos:
 }
 
 function ataquesPokemon() {
-    const lvlAtaques = pokemon.moves.map(ar => ar.lv)
+    const lvlAtaques = pokemon.moves.map(arrayLv => arrayLv.lv)
+    console.log(lvlAtaques)
     const ordemlvlAtaques = lvlAtaques.sort((numero1, numero2) => (numero1 - numero2))
-    new Set(ordemlvlAtaques)
+    console.log(ordemlvlAtaques)
+//    new Set(ordemlvlAtaques)
     dadosImpressao += "\nAtaques: \n"
+    console.log(dadosImpressao)
     for (const iterator of ordemlvlAtaques) {
         const nomesAtaques = pokemon.moves.filter(a => a.lv == iterator)
         nomesAtaques.forEach(ataque => {
@@ -54,11 +58,11 @@ function ataquesPokemon() {
 }
 
 function imprimir() {
-    mostraDados();
-    linhaDeEvolucao(),
-    atributosPokemon(), 
-    ataquesPokemon(),
-    console.log(dadosImpressao)
+   // mostraDados();
+   // linhaDeEvolucao();
+   // atributosPokemon();
+    ataquesPokemon()
+   // console.log(dadosImpressao)
 
 }
 imprimir()

@@ -7,7 +7,7 @@ let dadosImpressao = '';
 //variável para ser preenchida quando necessário
 function mostraDados() {
     dadosImpressao += "Nome: " + util.primeraMaiuscula(pokemon.name)
-    dadosImpressao += " - Tipo: " + pokemon.types.map(tipo => util.primeraMaiuscula(tipo).split("/"))
+    dadosImpressao += " - Tipo: " + pokemon.types.map(tipo => util.primeraMaiuscula(tipo)).join(' / ')
     dadosImpressao += "\nHabilidade: " + util.primeraMaiuscula(pokemon.ability)
 }
 

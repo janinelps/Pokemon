@@ -9,15 +9,13 @@ function mostraDados() {
     dadosImpressao += "Nome: " + util.primeraMaiuscula(pokemon.name)
     dadosImpressao += " - Tipo: " + pokemon.types.map(tipo => util.primeraMaiuscula(tipo).toString())
     dadosImpressao += "\nHabilidade: " + util.primeraMaiuscula(pokemon.ability)
-    dadosImpressao += "\n\n"
-    dadosImpressao += "Linha de evolução: \n"
-
 }
 
 function linhaDeEvolucao() {
     //var linhaEvol1 = pokemon.preEvolution
     //var linhaEvol2 = pokemon.name
     //var linhaEvol3 = pokemon.evolution
+    dadosImpressao += "\n\nLinha de evolução: \n"
 
     if (!util.isNullOrEmpty(pokemon.preEvolution)) {
         dadosImpressao += util.primeraMaiuscula(pokemon.preEvolution);

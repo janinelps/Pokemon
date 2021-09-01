@@ -40,19 +40,14 @@ function linhaDeEvolucao() {
 }
 
 function atributosPokemon() {
-    dadosImpressao += '\nAtributos: \n'
-    var hp = pokemon.attributes.hp
-    var atk = pokemon.attributes.attack
-    var spATK = pokemon.attributes.specialAttack
-    var def = pokemon.attributes.defense
-    var spDEF = pokemon.attributes.specialDefense
-    var speed = pokemon.attributes.speed
-
     dadosImpressao +=  `
-    HP: ${hp} 
-    ATK: ${atk}  SpATK: ${spATK} 
-    DEF: ${def}  SpDEF: ${spDEF} 
-    SPEED: ${speed}`
+Atributos:
+
+    HP: ${pokemon.attributes.hp} 
+    ATK: ${pokemon.attributes.attack}  SpATK: ${pokemon.attributes.specialAttack} 
+    DEF: ${pokemon.attributes.defense}  SpDEF: ${pokemon.attributes.specialDefense} 
+    SPEED: ${pokemon.attributes.speed}
+`
     /*    return console.log("HP: " + pokemon.attributes.hp + "\nATK: " +  pokemon.attributes.attack + 
      "  SpATK: " +  pokemon.attributes.specialAttack + "\nDEF: " + pokemon.attributes.defense +
      "  SpDEF: " +  pokemon.attributes.specialDefense + "\nSPEED: " + pokemon.attributes.speed)
@@ -63,7 +58,7 @@ function ataquesPokemon() {
     const lvlAtaques = pokemon.moves.map(ar => ar.lv)
     const ordemlvlAtaques = lvlAtaques.sort((numero1, numero2) => (numero1 - numero2))
     new Set(ordemlvlAtaques)
-    dadosImpressao += "\n\nAtaques: \n"
+    dadosImpressao += "\nAtaques: \n"
     for (const iterator of ordemlvlAtaques) {
         const nomesAtaques = pokemon.moves.filter(a => a.lv == iterator)
         nomesAtaques.forEach(ataque => {

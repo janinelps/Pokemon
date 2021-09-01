@@ -7,14 +7,12 @@ let dadosImpressao = '';
 //variável para ser preenchida quando necessário
 function mostraDados() {
     dadosImpressao += "Nome: " + util.primeraMaiuscula(pokemon.name)
-    dadosImpressao += " - Tipo: " + pokemon.types.map(tipo => util.primeraMaiuscula(tipo).toString())
+    dadosImpressao += " - Tipo: " + pokemon.types.map(tipo => util.primeraMaiuscula(tipo).split("/"))
     dadosImpressao += "\nHabilidade: " + util.primeraMaiuscula(pokemon.ability)
 }
 
 function linhaDeEvolucao() {
-    //var linhaEvol1 = pokemon.preEvolution
-    //var linhaEvol2 = pokemon.name
-    //var linhaEvol3 = pokemon.evolution
+
     dadosImpressao += "\n\nLinha de evolução: \n"
 
     if (!util.isNullOrEmpty(pokemon.preEvolution)) {
@@ -29,14 +27,6 @@ function linhaDeEvolucao() {
     }
     dadosImpressao += '\n\r'
 
-
-    /*if (linhaEvol1 != null && linhaEvol3 != null) {
-        dadosImpressao += linhaEvol1[0].toUpperCase().substr(1, linhaEvol1.length) + " >> " + linhaEvol2.toUpperCase() + " >> " + linhaEvol3[0].toUpperCase().substr(1, linhaEvol3.length)
-            //}
-
-        if(pokemon.preEvolution != null && pokemon.evolution != null){
-            pokemon.nameto.UpperCase()
-        } else if */
 }
 
 function atributosPokemon() {
@@ -48,10 +38,6 @@ Atributos:
     DEF: ${pokemon.attributes.defense}  SpDEF: ${pokemon.attributes.specialDefense} 
     SPEED: ${pokemon.attributes.speed}
 `
-    /*    return console.log("HP: " + pokemon.attributes.hp + "\nATK: " +  pokemon.attributes.attack + 
-     "  SpATK: " +  pokemon.attributes.specialAttack + "\nDEF: " + pokemon.attributes.defense +
-     "  SpDEF: " +  pokemon.attributes.specialDefense + "\nSPEED: " + pokemon.attributes.speed)
-    */
 }
 
 function ataquesPokemon() {
@@ -71,19 +57,8 @@ function imprimir() {
     mostraDados();
     linhaDeEvolucao(),
     atributosPokemon(), 
-        ataquesPokemon(),
-        console.log(dadosImpressao)
+    ataquesPokemon(),
+    console.log(dadosImpressao)
 
 }
 imprimir()
-
-/*
-Função 1: Manipula uma string para deixar palavras ou letras maiusculas
-
-Função atributosPokemon: Mostra os atributos
-
-Função ataquesPokemon: Mostra os ataques em ordem crescente com a primeira letra
-de cada palavra em maiusculo
-
-Função imprimirDados: Imprime as infos das outras funções na ordem requerida
-*/

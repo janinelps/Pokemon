@@ -7,9 +7,9 @@ let dadosImpressao = '';
 //variável para ser preenchida quando necessário
 
 function mostraDados() {
-    dadosImpressao += "Nome: " + util.primeraMaiuscula(pokemon.name)
-    dadosImpressao += " - Tipo: " + pokemon.types.map(tipo => util.primeraMaiuscula(tipo)).join(' / ')
-    dadosImpressao += "\nHabilidade: " + util.primeraMaiuscula(pokemon.ability)
+    dadosImpressao += `
+Nome: ${util.primeraMaiuscula(pokemon.name)} - Tipo: ${pokemon.types.map(tipo => util.primeraMaiuscula(tipo)).join(' / ')}
+Habilidade: ${util.primeraMaiuscula(pokemon.ability)}`
 }
 
 function linhaDeEvolucao() {
@@ -43,26 +43,24 @@ Atributos:
 
 function ataquesPokemon() {
     const lvlAtaques = pokemon.moves.map(arrayLv => arrayLv.lv)
-    console.log(lvlAtaques)
     const ordemlvlAtaques = lvlAtaques.sort((numero1, numero2) => (numero1 - numero2))
-    console.log(ordemlvlAtaques)
-//    new Set(ordemlvlAtaques)
     dadosImpressao += "\nAtaques: \n"
-    console.log(dadosImpressao)
+    
     for (const iterator of ordemlvlAtaques) {
         const nomesAtaques = pokemon.moves.filter(a => a.lv == iterator)
         nomesAtaques.forEach(ataque => {
-        dadosImpressao += "Lv ".concat(ataque.lv," - ", util.primeraMaiuscula(ataque.name))
-        dadosImpressao += "\n"});
+        dadosImpressao += `Lv ${ataque.lv} - ${util.primeraMaiuscula(ataque.name)}
+`
+        });
     }
 }
 
 function imprimir() {
-   // mostraDados();
-   // linhaDeEvolucao();
-   // atributosPokemon();
+    mostraDados();
+    linhaDeEvolucao();
+    atributosPokemon();
     ataquesPokemon()
-   // console.log(dadosImpressao)
+    console.log(dadosImpressao)
 
 }
 imprimir()
